@@ -1,0 +1,35 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+{% block title %}Create_Record{% endblock title %}
+
+{% block content %}
+   <div class="text-center">
+       <br>
+    <h2>Add New Record</h2><br>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="mb-3 form-group" >
+                <label>Name:</label> <br>
+                {{form.name}}
+            </div> 
+            <div class="mb-3 form-group" >
+                <label>Date:</label> <br>
+                {{form.date}}
+            </div>
+            <div class="mb-3 form-group" >
+                <label>Amount:</label> <br>
+                {{form.amount}}
+            </div>
+            <div class="mb-3 form-group" >
+                <label>Reason:</label> <br>
+                {{form.reason}}
+            </div>
+            <div class="mb-3 form-group" >
+                <label>Status:</label> <br>
+                {{form.status}}
+            </div>
+        <input type="submit" class="btn btn-primary" value="Add Record">
+        <a href="{% url 'user_dashboard' %}" class="btn btn-primary">Back</a>
+     </form>
+    </div>
+{% endblock content %}

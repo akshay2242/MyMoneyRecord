@@ -1,0 +1,1 @@
+web: gunicorn MyMoneyRecord.wsgi --log-file -

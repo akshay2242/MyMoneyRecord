@@ -1,0 +1,42 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+
+{% block title %}Create User{% endblock title %}
+
+{% block content %}
+    <div class="container text-center">
+        <br><br>
+        <h2>Add New User</h2><br>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="Username">Username:</label> <br>
+                    {{form.username}}
+                </div> 
+                <div class="mb-3 form-group">
+                    <label for="FistName">First Name:</label> <br>
+                    {{form.first_name}}    
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="LastName">Last Name:</label> <br>
+                    {{form.last_name}}    
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="Email">Email:</label> <br>
+                    {{form.email}}    
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="Password1">Password:</label> <br>
+                    {{form.password1}}    
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="Password2">Confirm Password:</label> <br>
+                    {{form.password2}}    
+                </div>
+            <input type="submit" class="btn btn-primary" value="Add User">
+            <a href="{% url 'admin_dashboard' %}" class="btn btn-primary">Back</a>
+         </form>
+         
+    </div>    
+{% endblock content %}
+

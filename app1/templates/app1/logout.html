@@ -1,0 +1,14 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+
+{% block title %}Logout{% endblock title %}
+
+{% block content %}
+<br>
+    <div class="text-center">
+        <h1>Logout Successfully.....</h1> <br>
+    <a href="{% url 'user_login' %}">Back to Login page...</a>
+    </div>
+{% endblock content %}
+
+                    

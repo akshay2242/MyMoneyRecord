@@ -1,0 +1,40 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+
+{% block title %}Admin Dashboard{% endblock title %}
+
+{% block content %}
+<br>
+    <div class="text-center">
+        <h1>Welcome Akshay.....</h1><hr> <br>
+    <a href="{% url 'create_user' %}" class="btn btn-primary">Add New User</a>
+    <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+    </div>
+    <br>
+    <div>
+        <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Username</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for dt in data %}
+              <tr>
+                <th scope="row">{{dt.id}}</th>
+                <td>{{dt.username}}</td>
+                <td>{{dt.first_name}}</td>
+                <td>{{dt.last_name}}</td>
+                <td>{{dt.email}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+{% endblock content %}
+
+                    

@@ -1,0 +1,36 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock title %}
+
+{% block content %} <br>
+<h3>Welcome {{user}}</h3> <hr>
+<a href="{% url 'create_record' %}" class="btn btn-primary">Add New Record</a>
+<a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+    <div> <br>
+        <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Reason</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for dt in data %}
+              <tr>
+                <td>{{dt.name}}</td>
+                <td>{{dt.date}}</td>
+                <td>{{dt.amount}}</td>
+                <td>{{dt.reason}}</td>
+                <td>{{dt.status}}</td>
+                <td><a href="{% url 'update_record' dt.id %}" class="btn btn-primary">Update</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+    </div> <br>
+   
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+
+{% block title %} Admin Login{% endblock title %}
+
+{% block content %}
+    <div class="container text-center">
+        <br><br>
+        <h1>Welcome to My Money Record</h1> <hr> <br>
+        <h2>Admin Login</h2><br>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="Username">Username:</label> <br>
+                    {{form.username}}
+                </div> 
+                <div class="mb-3 form-group">
+                    <label for="Password">Password:</label> <br>
+                    {{form.password}}    
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-primary" value="login">
+                </div>
+            </form>
+    </div>    
+{% endblock content %}
+
+                    
+
